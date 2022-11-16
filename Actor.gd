@@ -129,4 +129,5 @@ func animate():
 		get_node("Sprite").play("Idle")
 		
 	else:
+		
 		get_node("Sprite").play("Default")
