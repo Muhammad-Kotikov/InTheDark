@@ -1,21 +1,24 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tileset_debug.tres" type="TileSet" id=2]
-[ext_resource path="res://Sprite.gd" type="Script" id=3]
+[ext_resource path="res://Kaefer.png" type="Texture" id=3]
 [ext_resource path="res://Pixilart Sprite Sheet.png" type="Texture" id=4]
+[ext_resource path="res://Schnecke.gd" type="Script" id=5]
+[ext_resource path="res://Kaefer.gd" type="Script" id=6]
+[ext_resource path="res://Ende.png" type="Texture" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 7, 10 )
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 7, 7 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
-region = Rect2( 7, 0, 7, 10 )
+atlas = ExtResource( 3 )
+region = Rect2( 7, 0, 7, 7 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 4 )
-region = Rect2( 14, 0, 7, 10 )
+atlas = ExtResource( 3 )
+region = Rect2( 14, 0, 7, 7 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -25,22 +28,52 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1, 12, 8 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 9, 12, 8 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="World" type="Node"]
 
 [node name="Actor" parent="." instance=ExtResource( 1 )]
-position = Vector2( 128, 168 )
-
-[node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 25, 190 )
-frames = SubResource( 4 )
-playing = true
-script = ExtResource( 3 )
+position = Vector2( 222, 184 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 458752, 1, 0, 524288, 1, 0, 589824, 1, 0, 589833, 1, 0, 655360, 1, 0, 655369, 1, 0, 720896, 1, 0, 720905, 1, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0 )
+tile_data = PoolIntArray( -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -131052, 0, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -65533, 0, 0, -65512, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 65536, 0, 0, 65544, 0, 0, 65545, 0, 0, 65563, 0, 0, 131072, 0, 0, 131099, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196635, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262153, 0, 0, 262154, 0, 0, 262158, 0, 0, 262161, 0, 0, 262162, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262171, 0, 0, 327680, 0, 0, 327707, 0, 0, 393216, 0, 0, 393243, 0, 0, 458752, 1, 0, 458777, 0, 0, 458778, 0, 0, 524288, 1, 0, 524297, 1, 0, 524298, 1, 0, 524311, 0, 0, 524312, 0, 0, 589824, 1, 0, 589832, 1, 0, 589835, 1, 0, 589846, 0, 0, 655360, 1, 0, 655367, 1, 0, 655372, 1, 0, 655381, 0, 0, 720896, 1, 0, 720903, 1, 0, 720908, 1, 0, 720916, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Kaefer" type="AnimatedSprite" parent="."]
+position = Vector2( -69, 89 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+offset = Vector2( 100, 100 )
+script = ExtResource( 6 )
+
+[node name="Schnecke" type="AnimatedSprite" parent="."]
+position = Vector2( -43, 88 )
+frames = SubResource( 7 )
+playing = true
+offset = Vector2( 100, 100 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 71, 43 )
+scale = Vector2( 3.08867, 3.05514 )
+texture = ExtResource( 7 )
