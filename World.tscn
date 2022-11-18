@@ -47,7 +47,7 @@ animations = [ {
 [node name="World" type="Node"]
 
 [node name="Actor" parent="." instance=ExtResource( 1 )]
-position = Vector2( 222, 184 )
+position = Vector2( 223.059, 175.524 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -61,7 +61,7 @@ __meta__ = {
 [node name="Kaefer" type="AnimatedSprite" parent="."]
 position = Vector2( -69, 89 )
 frames = SubResource( 4 )
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 100, 100 )
 script = ExtResource( 6 )

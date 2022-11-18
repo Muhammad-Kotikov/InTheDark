@@ -128,6 +128,10 @@ func animate():
 		
 		get_node("Sprite").play("Idle")
 		
-	else:
+	if velocity.x < 0:
+		get_node("Sprite").flip_h = true
+		get_node("Sprite").play("Run")
 		
-		get_node("Sprite").play("Default")
+	if velocity.x > 0:
+		get_node("Sprite").flip_h = false
+		get_node("Sprite").play("Run")
